@@ -1,2 +1,4 @@
-# python-programming-challenges-
-Fundamental challenges and solutions 
+# Python programming challenges
+
+## Fundamental challenges and solutions 
+
