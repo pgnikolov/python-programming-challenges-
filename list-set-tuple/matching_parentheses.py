@@ -1,5 +1,15 @@
-# You are given an algebraic expression with parentheses. Scan through the string and extract each set of parentheses.
-# Print the result back on the console.
+# expr_str = [char for char in input()]
+#
+# result = []
+# start_index = []
+#
+# for i in range(len(expr_str)):
+# 	if expr_str[i] == "(":
+# 		start_index.append(i)
+# 	elif expr_str[i] == ")":
+# 		result.append("".join(expr_str[start_index.pop(): i + 1]))
+#
+# print("\n".join(result))
 
 expression = input()
 
