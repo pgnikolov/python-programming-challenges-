@@ -9,36 +9,61 @@
 # • "refill {liters}" - add the given litters in the dispenser.
 # In the end, print how many liters of water have left in the format: "{left_liters} liters left".
 
+# from collections import deque
+#
+#
+# def water_dispenser():
+#     water = int(input())
+#     people = deque()
+#
+#     # Add people to queue until "Start" command
+#     command = input()
+#     while command != "Start":
+#         people.append(command)
+#         command = input()
+#
+#     # until "End"
+#     command = input()
+#     while command != "End":
+#         if "refill" in command:
+#             refill_amount = int(command.split()[1])
+#             water += refill_amount
+#         else:
+#             request_amount = int(command)
+#             if request_amount <= water:
+#                 water -= request_amount
+#                 print(f"{people.popleft()} got water")
+#             else:
+#                 print(f"{people.popleft()} must wait")
+#
+#         command = input()
+#
+#     print(f"{water} liters left")
+#
+#
+# water_dispenser()
+
 from collections import deque
 
+water_qnt = int(input())
+people = deque()
+command = input()
 
-def water_dispenser():
-    water = int(input())
-    people = deque()
+while command != "Start":
+	people.append(command)
+	command = input()
 
-    # Add people to queue until "Start" command
-    command = input()
-    while command != "Start":
-        people.append(command)
-        command = input()
+command = input()
 
-    # until "End"
-    command = input()
-    while command != "End":
-        if "refill" in command:
-            refill_amount = int(command.split()[1])
-            water += refill_amount
-        else:
-            request_amount = int(command)
-            if request_amount <= water:
-                water -= request_amount
-                print(f"{people.popleft()} got water")
-            else:
-                print(f"{people.popleft()} must wait")
+while command != "End":
+	info = command.split()
+	if info[0] == "refill":
+		water_qnt += int(info[1])
+	elif int(info[0]) > water_qnt:
+		print(f"{people.popleft()} must wait")
+	else:
+		water_qnt -= int(info[0])
+		print(f"{people.popleft()} got water")
+	command = input()
 
-        command = input()
-
-    print(f"{water} liters left")
-
-
-water_dispenser()
+print(f"{water_qnt} liters left")
