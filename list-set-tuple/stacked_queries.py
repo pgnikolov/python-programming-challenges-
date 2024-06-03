@@ -1,30 +1,18 @@
 from collections import deque
 
-numstack = deque()
-commands_qt = int(input())
+lines = int(input())
+stack = deque()
 
-COMMAND_PUSH = '1'
-COMMAND_DELETE = '2'
-COMMAND_MAXIMUM = '3'
-COMMAND_MINIMUM = '4'
+for _ in range(lines):
+	action = input().split()
+	if action[0] == '1':
+		stack.append(int(action[1]))
+	if len(stack) > 0:
+		if action[0] == '2':
+			stack.pop()
+		elif action[0] == '3':
+			print(max(stack))
+		elif action[0] == '4':
+			print(min(stack))
 
-for command_number in range(commands_qt):
-
-    command = input()
-
-    if command.startswith(COMMAND_PUSH):
-        number = command.split()
-        numstack.append(int(number[1]))
-
-    if len(numstack) > 0:
-        if command.startswith(COMMAND_DELETE):
-            numstack.pop()
-
-        elif command.startswith(COMMAND_MAXIMUM):
-            print(max(numstack))
-
-        elif command.startswith(COMMAND_MINIMUM):
-            print(min(numstack))
-
-numstack.reverse()
-print(*numstack, sep=", ")
+print(", ".join(map(str, reversed(stack))))
