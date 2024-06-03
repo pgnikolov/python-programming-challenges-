@@ -6,17 +6,31 @@
 # Print every kid who is removed from the circle in the format "Removed {kid}".
 # In the end, print the only kid left in the format "Last is {kid}".
 
+# from collections import deque
+#
+# kids = deque(input().split())
+# counter = int(input())
+#
+# while len(kids) > 1:
+#     for i in range(1, counter + 1):
+#         kturn = kids.popleft()
+#         if i != counter:
+#             kids.append(kturn)
+#         else:
+#             print(f"Removed {kturn}")
+#
+# print(f'Last is {"".join(kids)}')
+
 from collections import deque
 
-kids = deque(input().split())
-counter = int(input())
+names = deque(input().split())
+turs = int(input())
 
-while len(kids) > 1:
-    for i in range(1, counter + 1):
-        kturn = kids.popleft()
-        if i != counter:
-            kids.append(kturn)
-        else:
-            print(f"Removed {kturn}")
+while len(names) > 1:
+	for i in range(1, turs + 1):
+		if i == turs:
+			print(f"Removed {names.popleft()}")
+			continue
+		names.rotate(-1)
 
-print(f'Last is {"".join(kids)}')
+print(f"Last is {''.join(names)}")
