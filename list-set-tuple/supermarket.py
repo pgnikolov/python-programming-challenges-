@@ -3,16 +3,31 @@
 # "End" is received. If, in the meantime, you receive the command "Paid", you should print each customer in the order
 # they are served (from the first to the last one) and empty the queue.
 
-command = input()
-clients = []
+# command = input()
+# clients = []
+#
+# while command != "End":
+#     if command != "Paid":
+#         clients.append(command)
+#     else:
+#         for i in clients:
+#             print(i)
+#         clients.clear()
+#     command = input()
+#
+# print(f"{len(clients)} people remaining.")
 
+from collections import deque
+
+clients = deque()
+command = input()
 while command != "End":
-    if command != "Paid":
-        clients.append(command)
-    else:
-        for i in clients:
-            print(i)
-        clients.clear()
-    command = input()
+	if command == "Paid":
+		print("\n".join(clients))
+		clients.clear()
+	else:
+		clients.append(command)
+
+	command = input()
 
 print(f"{len(clients)} people remaining.")
