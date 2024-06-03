@@ -1,19 +1,28 @@
 from collections import deque
 
 pumps = int(input())
+pumps_values = []
+journey = deque()
+posible_journey = []
+fuel_over = 0
 
-stations_values = deque([])
+for pumps in range(pumps):
+	info = [int(el) for el in input().split()]
+	pumps_values.append(info)
+	journey.append(info[0] - info[1])
 
-for _ in range(pumps):
-    petrol, distance = [int(n) for n in input().split()]
-    current_station_value = petrol - distance
-    stations_values.append(current_station_value)
+pump_jurney = deque(pumps_values.copy())
 
-for i in range(pumps):
-    all_fuel_status = [stations_values[0]]
-    for j in range(1, pumps):
-        all_fuel_status.append(all_fuel_status[-1] + stations_values[j])
-    if all(n >= 0 for n in all_fuel_status):
-        print(i)
-        break
-    stations_values.rotate(-1)
+while not len(posible_journey) == len(pumps_values):
+	for i in range(len(journey)):
+		fuel_over += journey[i]
+		if fuel_over < 0:
+			fuel_over = 0
+			journey.rotate(-1)
+			pump_jurney.rotate(-1)
+			posible_journey.clear()
+			break
+		posible_journey.append(pump_jurney[i])
+	continue
+
+print(pumps_values.index(posible_journey[0]))
