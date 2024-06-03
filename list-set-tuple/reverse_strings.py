@@ -1,13 +1,14 @@
-# Write a program that:
-#     • Reads an input string
-#     • Reverses it using a stack
-#     • Prints the result back on the console
+# stak = [letter for letter in input()]
+#
+# result = []
+#
+# for i in range(len(stak)):
+#     result.append(stak.pop())
+#
+# print("".join(result))
 
-stak = [letter for letter in input()]
 
-result = []
+string_ = [char for char in (input())]
 
-for i in range(len(stak)):
-    result.append(stak.pop())
-
-print("".join(result))
+rev_string = [string_.pop() for i in range(len(string_))]
+print("".join(rev_string))
