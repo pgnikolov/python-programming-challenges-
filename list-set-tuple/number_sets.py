@@ -13,7 +13,7 @@
 #     current_set = set([int(el) for el in current_command_tokens[2:]])
 #     # print(current_set)
 #
-#     if real_command == 'Add First':  # TODO do this with mapper { command: function }
+#     if real_command == 'Add First':
 #         first_set = first_set.union(current_set)
 #     elif real_command == 'Add Second':
 #         second_set = second_set.union(current_set)
@@ -36,21 +36,21 @@
 first_set = set(int(x) for x in input().split())
 second_set = set(int(x) for x in input().split())
 
-functions = {
-    'Add First': lambda numbers: [first_set.add(x) for x in numbers],
-    'Add Second': lambda numbers: [second_set.add(x) for x in numbers],
-    'Remove First': lambda numbers: [first_set.discard(x) for x in numbers],
-    'Remove Second': lambda numbers: [second_set.discard(x) for x in numbers],
-    'Check Subset': lambda numbers:
+commands = {
+    'Add First': lambda nums: [first_set.add(x) for x in nums],
+    'Add Second': lambda nums: [second_set.add(x) for x in nums],
+    'Remove First': lambda nums: [first_set.discard(x) for x in nums],
+    'Remove Second': lambda nums: [second_set.discard(x) for x in nums],
+    'Check Subset': lambda nums:
     print('True') if first_set.issubset(second_set) or second_set.issubset(first_set) else print('False')
 }
 
 for _ in range(int(input())):
-    command = input().split()
-    func = command[0] + ' ' + command[1]
+    info = input().split()
+    command = info[0] + ' ' + info[1]
     number_list = [int(x) for x in command[2:]]
 
-    functions[func](number_list)
+    commands[command](number_list)
 
 print(*(sorted(first_set)), sep=', ')
 print(*(sorted(second_set)), sep=', ')
