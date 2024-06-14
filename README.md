@@ -6,6 +6,8 @@ Welcome to the Challenge Solutions Repository! This repository contains solution
 
 ## Table of Contents:
 
+➡️ [**HackerRank Solutions**](https://github.com/pgnikolov/python-programming-challenges-/tree/main/HackerRank) - Solutions of random challenges from [HackerRank](https://www.hackerrank.com/) 
+                                                                                                                  
 ➡️ [**Python Principles Solutions**](https://github.com/pgnikolov/python-programming-challenges-/tree/main/python-principles) - Here you can find solutions for [Python Principles Challenges](https://pythonprinciples.com/challenges/).
 
 ➡️ [**List, Set, Tuple**](https://github.com/pgnikolov/python-programming-challenges-/tree/main/list-set-tuple) - Solution for data structures exercises from [SoftUni Python Advanced](https://softuni.bg/modules/74/python-advanced/1495).
