@@ -12,3 +12,5 @@ def maxProfit(prices):
             max_profit = price - min_price
 
     return max_profit
+
+#time complexity O(n)
