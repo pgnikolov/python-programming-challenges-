@@ -41,16 +41,3 @@ def findSubstring(s, words):
 
     return result
 
-
-# Example Usage:
-s = "barfoothefoobarman"
-words = ["foo", "bar"]
-print(findSubstring(s, words))  # Output: [0, 9]
-
-s = "wordgoodgoodgoodbestword"
-words = ["word", "good", "best", "word"]
-print(findSubstring(s, words))  # Output: []
-
-s = "barfoofoobarthefoobarman"
-words = ["bar", "foo", "the"]
-print(findSubstring(s, words))  # Output: [6, 9, 12]
