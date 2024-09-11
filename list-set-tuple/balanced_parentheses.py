@@ -1,4 +1,5 @@
 from collections import deque
+
 pairs = ['()', '{}', '[]']
 parentheses = deque(i for i in input())
 counter = len(parentheses) / 2
