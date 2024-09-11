@@ -1,8 +1,6 @@
 def longestCommonPrefix(strs):
     if not strs:
         return ""
-
-    # Find the minimum length string from the list
     min_length = min(len(s) for s in strs)
     common_prefix = ""
 
