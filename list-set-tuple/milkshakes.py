@@ -1,39 +1,40 @@
 from collections import deque
 
-choco = deque([int(num) for num in input().split(", ")])
-milk_cups = deque([int(num) for num in input().split(", ")])
 
-shakes_to_do = 0
+chocolate = [int(x) for x in input().split(",")]
+cups_of_milk = deque(int(x) for x in input().split(","))
 
-while True:
-    if len(choco) == 0 or len(milk_cups) == 0 or shakes_to_do == 5:
-        break
-    if choco[-1] <= 0:
-        choco.pop()
-    if milk_cups[0] <= 0:
-        milk_cups.popleft()
-    if choco and milk_cups:
-        if choco[-1] == milk_cups[0]:
-            shakes_to_do += 1
-            choco.pop()
-            milk_cups.popleft()
-        else:
-            milk_cups.rotate(-1)
-            choco[-1] -= 5
-    else:
+successfully_made_milkshakes = 0
+
+while chocolate and cups_of_milk and successfully_made_milkshakes != 5:
+    current_chocolate = chocolate.pop()
+    current_cup = cups_of_milk.popleft()
+
+    if current_chocolate <= 0 and current_cup <= 0:
         continue
+    elif current_chocolate <= 0:
+        cups_of_milk.appendleft(current_cup)
+        continue
+    elif current_cup <= 0:
+        chocolate.append(current_chocolate)
+        continue
+    if current_chocolate == current_cup:
+        successfully_made_milkshakes += 1
+    else:
+        cups_of_milk.append(current_cup)
+        chocolate.append(current_chocolate - 5)
 
-if shakes_to_do == 5:
-    print("Great! You made all the chocolate milkshakes needed!")
+if successfully_made_milkshakes == 5:
+    print(f"Great! You made all the chocolate milkshakes needed!")
 else:
-    print("Not enough milkshakes.")
+    print(f"Not enough milkshakes.")
 
-if len(choco) > 0:
-    print(f"Chocolate: {', '.join(map(str, choco))} ")
+if chocolate:
+    print(f"Chocolate: {', '.join(str(x) for x in chocolate)}")
 else:
     print("Chocolate: empty")
 
-if len(milk_cups) > 0:
-    print(f"Milk: {', '.join(map(str, milk_cups))} ")
+if cups_of_milk:
+    print(f"Milk: {', '.join(str(x) for x in cups_of_milk)}")
 else:
     print("Milk: empty")
