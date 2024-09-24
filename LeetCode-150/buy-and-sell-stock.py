@@ -1,4 +1,14 @@
 def maxProfit(prices):
+    """
+    Calculates the maximum profit that can be obtained by making a single buy and sell
+    operation on a given list of stock prices.
+
+    Parameters:
+    prices (List[int]): A list of integers representing the daily stock prices.
+
+    Returns:
+    int: The maximum profit that can be obtained, or 0 if no profitable operation is possible.
+    """
     if not prices:
         return 0
 
