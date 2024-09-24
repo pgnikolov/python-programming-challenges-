@@ -6,10 +6,10 @@ Welcome to the Challenge Solutions Repository! This repository contains solution
 
 ## Table of Contents:
 
-➡️ [**HackerRank Solutions**](https://github.com/pgnikolov/python-programming-challenges-/tree/main/HackerRank) - Solutions of random challenges from [HackerRank](https://www.hackerrank.com/):
+➡️ [**LeetCode Top Interview 150**](https://github.com/pgnikolov/python-programming-challenges-/tree/main/LeetCode-150) - Solutions of challenges from [Top Interview 150](https://leetcode.com/studyplan/top-interview-150/).
 
-  - [week24](https://github.com/pgnikolov/python-programming-challenges-/tree/main/HackerRank/week-24)
-                                                                                                                  
+➡️ [**LeetCode 75**](https://github.com/pgnikolov/python-programming-challenges-/tree/main/LeetCode-75) - Solutions of challenges from [75 Ace Coding Interview](https://leetcode.com/studyplan/leetcode-75/). 
+
 ➡️ [**Python Principles Solutions**](https://github.com/pgnikolov/python-programming-challenges-/tree/main/python-principles) - Here you can find solutions for [Python Principles Challenges](https://pythonprinciples.com/challenges/).
 
 ➡️ [**List, Set, Tuple**](https://github.com/pgnikolov/python-programming-challenges-/tree/main/list-set-tuple) - Solution for data structures exercises from [SoftUni Python Advanced](https://softuni.bg/modules/74/python-advanced/1495).
